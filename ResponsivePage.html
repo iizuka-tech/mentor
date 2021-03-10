@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <style>
+    body {
+      margin:0;
+    }
+
+    .text {
+      color:#454545;
+      font-family: Helvetica;
+      font-weight: 100;
+    }
+
+    .container {
+      padding: 20px
+    }
+
+    /* Text card style */
+    .card {
+      float: left;
+      margin: 10px;
+      padding: 10px;
+      max-width: 300px;
+      height: 300px;
+      background-color: lightsteelblue;
+      border-radius: 5px;
+    }
+     /* Navigation Bar Background color*/
+    .navbar {
+      background-color: #454545;
+      overflow: hidden;
+      } 
+      
+    /* Navigation Bar items */
+    .navbar a {
+      float: left;
+      display: block;
+      color: lightsteelblue;
+      text-align: center;
+      padding: 15px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 100;
+      font-family: Helvetica;
+      }
+
+    /* Navigation Bar item hover (inverted colors) */
+    .navbar a:hover {
+      background-color: lightsteelblue;
+      color: #454545;
+      }
+
+    /* Menu Icon (Hidden in wide page view, displayed in small screens) */
+    .navbar .icon {
+      display: none;
+      }
+
+    /* Hide the links, except for the first one when the screen is less than 600 pixels wide, */
+    /* Show Menu Icon */
+    @media screen and (max-width: 600px) {
+      .navbar a:not(:first-child) {display: none;}
+      .navbar a.icon {
+        float: right;
+        display: block;
+      }
+    }
+
+    /* When the Icon is clicked, responsiveFunction() method adds the "responsive" classto the navbar */
+    /* This class makes the topnav look good on small screens (display the menu vertically instead of horizontally) */
+    @media screen and (max-width: 600px) {
+      .navbar.responsive {position: relative;}
+      .navbar.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .navbar.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="navbar" id="nav">
+    <a href="#home">Home</a>
+    <a href="#Responsive">Responsive</a>
+    <a href="#Design">Design</a>
+    <a href="#about">About</a>
+    <a href="javascript:void(0);" class="icon" onclick="responsiveFunction()">&#9776;</a>
+  </div>
+
+  <!-- Title -->
+  <h1 class="text" align='center'>Simple Responsive Web Design template</h1>
+  <h2 class="text" align='center'>Resize it!</h2>
+
+  <!-- Responsive Cards -->
+  <div class="container">
+    <div class="card">
+      <h2 class="text">Card 1</h2>
+      <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam interdum eu quam et eleifend.</p>
+      <p class="text">Proin tempor sagittis pulvinar. Curabitur at metus arcu. Vestibulum faucibus magna a semper faucibus. In ornare.</p>
+    </div>
+
+    <div class="card">
+      <h2 class="text">Card 2</h2>
+      <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quam ligula, aliquet semper cursus quis, consectetur id est.</p>
+      <p class="text">Morbi aliquam lectus at nibh auctor, id pretium justo elementum. Proin fringilla.</p>
+    </div>
+
+    <div class="card">
+      <h2 class="text">Card 3</h2>
+      <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lacus lacus, suscipit nec facilisis sit amet, viverra eget justo.</p>
+      <p class="text">Mauris quis ligula vitae quam feugiat vestibulum nec vitae ante. Donec.</p>
+    </div>
+
+    <div class="card">
+      <h2 class="text">Card 4</h2>
+      <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lorem tellus, mollis eu dictum molestie, sodales quis elit.</p>
+      <p class="text">Aenean elementum nulla sit amet hendrerit aliquet. Integer pharetra quis nunc non.</p>
+    </div>
+  </div>
+
+  <!-- Script Method adding "responsive" class to the navigation bar -->
+  <!-- In order to display it for small screens -->
+  <script type="text/javascript">
+    function responsiveFunction() {
+      var elmnt = document.getElementById("nav");
+      if (elmnt.className === "navbar") {
+        elmnt.className += " responsive";
+      }
+      else {
+        elmnt.className = "navbar";
+      }
+    }
+  </script>
+  
+</body>
+
+</html>
